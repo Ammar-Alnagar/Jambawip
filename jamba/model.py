@@ -145,6 +145,7 @@ class MambaMoELayer(nn.Module):
         self.num_experts = num_experts
         self.num_experts_per_tok = num_experts_per_token
 
+
         # Mamba
         self.mamba = MambaBlock(
             dim,
@@ -257,6 +258,7 @@ class JambaBlock(nn.Module):
         x = self.mamba_layer(x)
         x = self.mamba_moe_layer(x)
         return x
+
 
 
 class Jamba(nn.Module):
